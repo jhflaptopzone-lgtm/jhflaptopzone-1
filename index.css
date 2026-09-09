@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+@theme {
+  --color-neon-green: #39FF14;
+  --color-dark-bg: #0A0A0A;
+  --color-dark-card: #141414;
+  --color-dark-border: #1F1F1F;
+}
+
+@layer base {
+  body {
+    @apply bg-dark-bg text-white font-sans antialiased;
+  }
+}
+
+.neon-glow {
+  box-shadow: 0 0 10px rgba(57, 255, 20, 0.2);
+}
+
+.neon-border {
+  @apply border border-neon-green/30 hover:border-neon-green transition-colors;
+}
+
+.btn-neon {
+  @apply bg-neon-green text-black font-bold py-2 px-4 rounded-lg hover:bg-neon-green/90 transition-all active:scale-95 disabled:opacity-50;
+}
+
+.input-dark {
+  @apply bg-dark-card border border-dark-border rounded-lg p-2 focus:outline-none focus:border-neon-green transition-all;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-dark-bg;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-dark-border rounded-full hover:bg-neon-green/50;
+}
